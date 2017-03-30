@@ -50,3 +50,17 @@ constexpr double kMassEarth = 5.9737e24;
 constexpr double kGravitationalEarth = 3.986004418e14;
 
 }
+
+
+namespace celestia {
+
+// Give the velocity of an artificial satellite above the Earth
+// Orbit is circular
+double VelocityAboveEarth(double altitude) {
+
+  double satellite_radius { (kRadiusEarth + altitude) * 1000 };
+
+  return sqrt(kGravitationalEarth / satellite_radius);
+}
+
+}

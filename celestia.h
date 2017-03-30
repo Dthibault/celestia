@@ -23,3 +23,10 @@
 */
 
 #include <cmath>
+
+namespace celestia {
+
+// Give the velocity of an artificial satellite above the Earth
+// Orbit is circular
+double VelocityAboveEarth(double altitude);
+}
