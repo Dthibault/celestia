@@ -29,4 +29,8 @@ namespace celestia {
 // Give the velocity of an artificial satellite above the Earth
 // Orbit is circular
 double VelocityAboveEarth(double altitude);
+
+// Give the period of revolution for a satellite above the Earth
+// Orbit is circular
+double PeriodRevolutionAboveEarth(double altitude);
 }

@@ -48,19 +48,27 @@ constexpr double kMassEarth = 5.9737e24;
 
 // Spaceflight constants
 constexpr double kGravitationalEarth = 3.986004418e14;
-
 }
-
 
 namespace celestia {
 
 // Give the velocity of an artificial satellite above the Earth
 // Orbit is circular
 double VelocityAboveEarth(double altitude) {
-
-  double satellite_radius { (kRadiusEarth + altitude) * 1000 };
+  const double satellite_radius{(kRadiusEarth + altitude) * 1000};
 
   return sqrt(kGravitationalEarth / satellite_radius);
 }
 
+// Give the period of revolution for a satellite above the Earth
+// Orbit is circular
+double PeriodRevolutionAboveEarth(double altitude) {
+  const double satellite_radius{(kRadiusEarth + altitude) * 1000};
+
+  double result{4 * pow(kPI, 2)};
+  result = result * pow(satellite_radius, 3);
+  result = result / kGravitationalEarth;
+
+  return sqrt(result);
+}
 }
